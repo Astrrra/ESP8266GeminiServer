@@ -59,7 +59,7 @@ void setup()
 
 void loop()
 {
-	BearSSL::WiFiClientSecure incomingConnection = server.available();
+    BearSSL::WiFiClientSecure incomingConnection = server.available();
     if (!incomingConnection){return;} // if no connections then do nothing
 
     while (incomingConnection.connected()){
@@ -102,9 +102,9 @@ void loop()
                     // time to read the file itself
 
                     // calculate count of chunks and size of the stuff that didn't fit
-					int fsize = file.size();
-					int chunk_count = (fsize / CHUNK_SIZE);
-					int rest_size = (fsize % CHUNK_SIZE);
+                    int fsize = file.size();
+                    int chunk_count = (fsize / CHUNK_SIZE);
+                    int rest_size = (fsize % CHUNK_SIZE);
 
                     // read chunks from the file and send them
                     char chunk[CHUNK_SIZE];
