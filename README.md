@@ -1,6 +1,7 @@
 # ESP8266 Gemini Server
 
 A simple gemini server implementation for the ESP8266.
+Demo: gemini://astrra.space
 
 ## Requirements
 * Arduino IDE set up for your ESP8266 board.
