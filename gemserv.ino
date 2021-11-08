@@ -13,13 +13,13 @@
 #define	CHUNK_SIZE 256
 
 // response headers
-static const char *HEADER_GEM_OK 			= "20 text/gemini\r\n";								// .gmi
-static const char *HEADER_MARKDOWN_OK	    = "20 text/markdown\r\n";							// .md
-static const char *HEADER_PLAIN_OK 		    = "20 text/plain\r\n";								// .txt
-static const char *HEADER_JPEG_OK			= "20 image/jpeg\r\n";								// .jpg
-static const char *HEADER_BIN_OK			= "20 application/octet-stream\r\n";	            // other stuff
-static const char *HEADER_NOT_FOUND 		= "51 File Not Found\r\n";
-static const char *HEADER_INTERNAL_FAIL 	= "50 Internal Server Error\r\n";
+static const char *HEADER_GEM_OK            = "20 text/gemini\r\n";                 // .gmi
+static const char *HEADER_MARKDOWN_OK       = "20 text/markdown\r\n";               // .md
+static const char *HEADER_PLAIN_OK          = "20 text/plain\r\n";                  // .txt
+static const char *HEADER_JPEG_OK           = "20 image/jpeg\r\n";                  // .jpg
+static const char *HEADER_BIN_OK            = "20 application/octet-stream\r\n";    // other stuff
+static const char *HEADER_NOT_FOUND         = "51 File Not Found\r\n";
+static const char *HEADER_INTERNAL_FAIL     = "50 Internal Server Error\r\n";
 
 // tls server
 BearSSL::WiFiServerSecure server(PORT);
