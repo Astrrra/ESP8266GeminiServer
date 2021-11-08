@@ -1,0 +1,2 @@
+# ESP8266 Gemini Server
+If you're reading this, everything works! Now check the data/gemini folder to edit this file, or add something else!
