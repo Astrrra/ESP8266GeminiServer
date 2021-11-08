@@ -30,21 +30,13 @@ void setup()
     LittleFSConfig cfg;
     cfg.setAutoFormat(false);
 
-    if (!LittleFS.begin()) // restart if LittleFS failed
-    { 
-        delay(1000);
-        ESP.restart();
-    }
-
     // connect to wifi as defined in config.h
     WiFi.mode(WIFI_STA);
     WiFi.hostname(HOSTNAME);
     WiFi.begin(SSID, PASSWD);
+
     // wait for connection
-    while(WiFi.status() != WL_CONNECTED)
-    {
-        delay(1000);
-    }
+    while(WiFi.status() != WL_CONNECTED){delay(1000);}
 
     // add private cert and key
     BearSSL::X509List *serverCertList = new BearSSL::X509List(server_cert);
@@ -123,11 +115,8 @@ void loop()
                     // those ones too
                     incomingConnection.flush();
                     incomingConnection.stop();
-
                 }
             }
-
         }
     }
-
 }
