@@ -92,32 +92,12 @@ void loop()
                 {
                     incomingConnection.read();  // read the rest of the incomig data
                                                 
-                    String e = request.getFile_ext(); // get the file extension and send the required header
-                    if (e.equals("gmi"))
-                    {
-                            Serial.write(HEADER_GEM_OK, strlen(HEADER_GEM_OK));
-                            incomingConnection.write((uint8_t*)HEADER_GEM_OK, strlen(HEADER_GEM_OK));
-                    } 
-                    else if (e.equals("txt")) 
-                    {
-                            Serial.write(HEADER_PLAIN_OK, strlen(HEADER_PLAIN_OK));
-                            incomingConnection.write((uint8_t*)HEADER_PLAIN_OK, strlen(HEADER_PLAIN_OK));
-                    }
-                    else if (e.equals("md")) 
-                    {
-                            Serial.write(HEADER_MARKDOWN_OK, strlen(HEADER_MARKDOWN_OK));
-                            incomingConnection.write((uint8_t*)HEADER_MARKDOWN_OK, strlen(HEADER_MARKDOWN_OK));
-                    } 
-                    else if (e.equals("jpg")) 
-                    {
-                            Serial.write(HEADER_JPEG_OK, strlen(HEADER_JPEG_OK));
-                            incomingConnection.write((uint8_t*)HEADER_JPEG_OK, strlen(HEADER_JPEG_OK));
-                    } 
-                    else 
-                    {
-                            Serial.write(HEADER_BIN_OK, strlen(HEADER_BIN_OK));
-                            incomingConnection.write((uint8_t*)HEADER_BIN_OK, strlen(HEADER_BIN_OK));
-                    }
+                    String extension = request.getFile_ext(); // get the file extension and send the required header
+                    if (extension.equals("gmi"))        {incomingConnection.write((uint8_t*)HEADER_GEM_OK, strlen(HEADER_GEM_OK));} 
+                    else if (extension.equals("txt"))   {incomingConnection.write((uint8_t*)HEADER_PLAIN_OK, strlen(HEADER_PLAIN_OK));}
+                    else if (extension.equals("md"))    {incomingConnection.write((uint8_t*)HEADER_MARKDOWN_OK, strlen(HEADER_MARKDOWN_OK));} 
+                    else if (extension.equals("jpg"))   {incomingConnection.write((uint8_t*)HEADER_JPEG_OK, strlen(HEADER_JPEG_OK));} 
+                    else                                {incomingConnection.write((uint8_t*)HEADER_BIN_OK, strlen(HEADER_BIN_OK));}
                     
                     // time to read the file itself
 
